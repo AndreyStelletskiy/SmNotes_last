@@ -27,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
         isShow = 1;
         getSupportActionBar().hide();
 
-        if (isShow == 1) {findViewById(R.id.btchange).setVisibility(View.GONE); findViewById(R.id.btDel).setVisibility(View.VISIBLE);
-        } else {findViewById(R.id.btchange).setVisibility(View.VISIBLE); findViewById(R.id.btDel).setVisibility(View.GONE);}
+        findViewById(R.id.btchange).setVisibility(View.GONE);
+        findViewById(R.id.btDel).setVisibility(View.VISIBLE);
+        findViewById(R.id.noshowall).setVisibility(View.GONE);
     }
 
 
@@ -106,6 +107,15 @@ public class MainActivity extends AppCompatActivity {
         readname.setText("");
         readNote.setText("");
         Toast.makeText(this, "Заметка удалена", Toast.LENGTH_SHORT).show();
+    }
+
+    //Показ и скрытие имён всех заметок
+    public void showall (View view){
+        findViewById(R.id.showall).setVisibility(View.GONE);
+    }
+    public void noshowall (View view){
+        findViewById(R.id.noshowall).setVisibility(View.GONE);
+
     }
 
 
