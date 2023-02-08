@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Открытие заметки
     public void openNote(View view) {
+        findViewById(R.id.noshowall).setVisibility(View.GONE);
+        findViewById(R.id.showall).setVisibility(View.VISIBLE);
         isShow = 0;
 
         EditText readname = findViewById(R.id.ReadNoteName);
@@ -112,9 +114,14 @@ public class MainActivity extends AppCompatActivity {
     //Показ и скрытие имён всех заметок
     public void showall (View view){
         findViewById(R.id.showall).setVisibility(View.GONE);
+        findViewById(R.id.noshowall).setVisibility(View.VISIBLE);
+        EditText Chnote = findViewById(R.id.ChangeNote);
     }
     public void noshowall (View view){
         findViewById(R.id.noshowall).setVisibility(View.GONE);
+        findViewById(R.id.showall).setVisibility(View.VISIBLE);
+        EditText Chnote = findViewById(R.id.ChangeNote);
+        Chnote.setText("");
 
     }
 

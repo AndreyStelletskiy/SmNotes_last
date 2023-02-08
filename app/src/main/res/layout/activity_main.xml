@@ -122,29 +122,31 @@
 
     <ImageView
         android:id="@+id/showall"
-        android:onClick="showall"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="16dp"
         android:background="#FFFFFF"
+        android:onClick="showall"
         app:layout_constraintBottom_toBottomOf="@+id/imbtNewNotes"
         app:layout_constraintEnd_toStartOf="@+id/imbtNewNotes"
         app:layout_constraintTop_toTopOf="@+id/imbtNewNotes"
         app:srcCompat="@drawable/view"
-        app:tint="#FF6D00" />
+        app:tint="#FF6D00"
+        tools:ignore="DuplicateClickableBoundsCheck,SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/noshowall"
-        android:onClick="noshowall"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="16dp"
         android:background="#FFFFFF"
+        android:onClick="noshowall"
         app:layout_constraintBottom_toBottomOf="@+id/imbtNewNotes"
         app:layout_constraintEnd_toStartOf="@+id/imbtNewNotes"
         app:layout_constraintTop_toTopOf="@+id/imbtNewNotes"
         app:srcCompat="@drawable/hidden"
-        app:tint="#FF6D00" />
+        app:tint="#FF6D00"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
