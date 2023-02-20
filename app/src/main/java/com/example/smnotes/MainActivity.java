@@ -28,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         findViewById(R.id.btchange).setVisibility(View.GONE);
-        findViewById(R.id.btDel).setVisibility(View.VISIBLE);
-        findViewById(R.id.noshowall).setVisibility(View.GONE);
     }
 
 
@@ -42,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
         intCreate.putExtra("nname", nname);
         startActivity(intCreate);
         isShow =1;
-        if (isShow == 1) {findViewById(R.id.btchange).setVisibility(View.GONE); findViewById(R.id.btDel).setVisibility(View.VISIBLE);
-        } else {findViewById(R.id.btchange).setVisibility(View.VISIBLE); findViewById(R.id.btDel).setVisibility(View.GONE);}
+        findViewById(R.id.btchange).setVisibility(View.GONE);
+        findViewById(R.id.btDel).setVisibility(View.VISIBLE);
     }
 
     //Переход на активность изменения заметки++++
@@ -58,16 +56,14 @@ public class MainActivity extends AppCompatActivity {
         intChange.putExtra("snn", snote);
         startActivity(intChange);
         isShow = 1;
-        if (isShow == 1) {findViewById(R.id.btchange).setVisibility(View.GONE); findViewById(R.id.btDel).setVisibility(View.VISIBLE);
-        } else {findViewById(R.id.btchange).setVisibility(View.VISIBLE); findViewById(R.id.btDel).setVisibility(View.GONE);}
+        findViewById(R.id.btchange).setVisibility(View.GONE);
+        findViewById(R.id.btDel).setVisibility(View.VISIBLE);
     }
 
 
 
     //Открытие заметки
     public void openNote(View view) {
-        findViewById(R.id.noshowall).setVisibility(View.GONE);
-        findViewById(R.id.showall).setVisibility(View.VISIBLE);
         isShow = 0;
 
         EditText readname = findViewById(R.id.ReadNoteName);
@@ -102,27 +98,14 @@ public class MainActivity extends AppCompatActivity {
 
     //Удоление заметкм
     public void NoteDell(View view){
-        EditText readname = findViewById(R.id.ReadNoteName);
+        EditText readnames = findViewById(R.id.ReadNoteName);
         EditText readNote = findViewById(R.id.ChangeNote);
-        String sname = readname.getText().toString();
+        if (readnames != null){
+        String sname = readnames.getText().toString();
         deleteFile(sname);
-        readname.setText("");
+        readnames.setText("");
         readNote.setText("");
-        Toast.makeText(this, "Заметка удалена", Toast.LENGTH_SHORT).show();
-    }
-
-    //Показ и скрытие имён всех заметок
-    public void showall (View view){
-        findViewById(R.id.showall).setVisibility(View.GONE);
-        findViewById(R.id.noshowall).setVisibility(View.VISIBLE);
-        EditText Chnote = findViewById(R.id.ChangeNote);
-    }
-    public void noshowall (View view){
-        findViewById(R.id.noshowall).setVisibility(View.GONE);
-        findViewById(R.id.showall).setVisibility(View.VISIBLE);
-        EditText Chnote = findViewById(R.id.ChangeNote);
-        Chnote.setText("");
-
+        Toast.makeText(this, "Заметка удалена", Toast.LENGTH_SHORT).show();}
     }
 
 
